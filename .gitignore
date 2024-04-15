@@ -24,3 +24,6 @@ ex_text_splitter-*.tar
 
 # Temporary files, for example, from tests.
 /tmp/
+
+# don't cache compiled binary
+/priv/native
