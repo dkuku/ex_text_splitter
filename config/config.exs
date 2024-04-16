@@ -1,4 +1,4 @@
 import Config
 
 config :ex_text_splitter,
-  features: ["markdown"]
+  features: ["markdown", "tiktoken-rs"]

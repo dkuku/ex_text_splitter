@@ -1,0 +1,58 @@
+# ExTextSplitter
+
+```elixir
+Mix.install(
+  [
+    {:ex_text_splitter, "~> 0.1.0"}
+  ],
+  config: [ex_text_splitter: [features: ["markdown", "tiktoken-rs"]]]
+)
+```
+
+## Section
+
+```elixir
+text =
+  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+```
+
+```elixir
+ExTextSplitter.Native.text_splitter(text, max_tokens: 20)
+```
+
+```elixir
+ExTextSplitter.Native.tokenizer_text_splitter(text, tokenizer: "cl100k_base", max_tokens: 20)
+```
+
+```elixir
+markdown = """
+# Copia crine fessusque deorum
+
+## Opus ipse esse saepe
+
+Lorem markdownum levat sic una [aut tenet](http://eleusin.org/albet-corpore)
+querellas valerem collis litora, ante poenas traherent? Certumque plangebat quae
+Thebas meis, vesper eodem, illi urbem *murram aetas*.
+
+## Frugum urbem haec paelex
+
+Nec per promittet dei oro est graves contra et Io frondibus bracchia dissuaserat
+caeli. Posita facies per demptis facilesque defensus demite, nemus ille acie.
+
+- Deus videre
+- Suam non dolisque
+- Erat auras arboribus probat magna
+- Parenti flammiferas huius conantem hinc imis auso
+- Laeva ab de via vidit iterque pectus
+
+## Tenues obumbrat requirit mollibus tactu
+"""
+```
+
+```elixir
+ExTextSplitter.Native.markdown_splitter(markdown, max_tokens: 100, trim_chunks: true)
+```
+
+```elixir
+ExTextSplitter.Native.tokenizer_markdown_splitter(markdown, max_tokens: 20, trim_chunks: true)
+```

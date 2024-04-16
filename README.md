@@ -1,7 +1,22 @@
 # ExTextSplitter
 
-**TODO: Add description**
+This package provides bindings to [text-splitter](https://github.com/benbrandt/text-splitter) crate
+By default only the text_splitter function is available but you can configure the available features:
 
+```elixir
+# this will enable all features
+config :ex_text_splitter,
+  features: ["markdown", "tiktoken-rs"]
+```
+
+This can be also configured using Mix.installed
+```elixir
+Mix.install(
+    [:ex_text_splitter],
+    config: [ex_text_splitter: [features: ["markdown"]]]
+)
+```
+<!-- MDOC -->
 ## Installation
 
 If [available in Hex](https://hex.pm/docs/publish), the package can be installed

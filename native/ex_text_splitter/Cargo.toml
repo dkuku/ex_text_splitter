@@ -10,8 +10,10 @@ path = "src/lib.rs"
 crate-type = ["cdylib"]
 
 [dependencies]
-rustler = "0.32.1"
+tiktoken-rs = { version = "0.5.8", optional = true }
 text-splitter = "0.10.0"
+rustler = "0.32.1"
 
 [features]
 markdown = ["text-splitter/markdown"]
+tiktoken-rs = ["dep:tiktoken-rs", "text-splitter/tiktoken-rs"]
