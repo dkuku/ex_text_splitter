@@ -1,6 +1,7 @@
 # ExTextSplitter
 
 This package provides bindings to [text-splitter](https://github.com/benbrandt/text-splitter) crate
+Check the [example livebook](examples/ex_text_splitter.livemd)
 By default only the text_splitter function is available but you can configure the available features:
 
 ```elixir
